@@ -2,17 +2,75 @@ index.html
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <title>História do Flamengo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>História do Flamengo nos Mundiais</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>História do Flamengo</h1>
-    <p>O Clube de Regatas do Flamengo é um dos times mais tradicionais do Brasil, fundado em 17 de novembro de 1895. Sua história é marcada por muitas conquistas e uma torcida apaixonada.</p>
-    <h2>Principais momentos</h2>
-    <ul>
-        <li>Campeonato Brasileiro: várias conquistas</li>
-        <li>Libertadores: títulos importantes</li>
-        <li>Famosos jogadores ao longo da história</li>
-    </ul>
+  <header>
+    <h1>🏆 Flamengo nos Mundiais</h1>
+  </header>
+
+  <main>
+    <section id="intro">
+      <p>Conheça a trajetória do Flamengo em competições internacionais ao longo da sua história.</p>
+    </section>
+
+    <section id="timeline">
+      <h2>🌟 Momentos Marcantes</h2>
+      <ul id="eventos"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Feito por um fã do Mengão 🔴⚫</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: #c00;
+  text-align: center;
+  padding: 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: #222;
+  margin: 10px 0;
+  padding: 15px;
+  border-left: 5px solid #c00;
+}
+const eventos = [
+  { ano: 1981, descricao: "Título da Copa Intercontinental contra o Liverpool. Vitória por 3x0 em Tóquio." },
+  { ano: 2019, descricao: "Vice-campeonato Mundial da FIFA. Derrota por 1x0 para o Liverpool na prorrogação." },
+  { ano: 2022, descricao: "Disputa do Mundial da FIFA. Terceiro lugar após vitória sobre o Al Ahly." }
+];
+
+const lista = document.getElementById("eventos");
+
+eventos.forEach(evento => {
+  const item = document.createElement("li");
+  item.textContent = `${evento.ano}: ${evento.descricao}`;
+  lista.appendChild(item);
+});
+
+
